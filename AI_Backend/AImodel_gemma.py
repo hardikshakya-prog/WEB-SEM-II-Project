@@ -8,7 +8,7 @@ CORS(app)
 OLLAMA_API_URL = "http://localhost:11434/api/chat"
 OLLAMA_MODEL = "gemma:2b"
 
-# This will store the chat history for now (in-memory for demo)
+
 chat_history = [{
     "role":"system",
     "content":"Suppose you are Gemma.Always introduce yourself before answering."
@@ -21,7 +21,7 @@ def translate():
         data = request.get_json()
         input_text = data.get("text", "")
 
-        # Add user's message to history
+        # Add user message to history
         chat_history.append({"role": "user", "content": input_text})
 
         # Send to Ollama
