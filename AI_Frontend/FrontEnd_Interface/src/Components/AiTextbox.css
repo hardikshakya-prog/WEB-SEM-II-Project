@@ -1,0 +1,28 @@
+.AiChatbox{
+    background: linear-gradient(135deg, #9C27B0 0%, #E040FB 100%);
+    color: white; 
+    border: 1px solid #b3d1ff;
+    border-radius: 12px;
+    padding: 1rem;
+    height: auto;
+    width: fit-content;
+    max-width: 30vw;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: Arial;
+    align-self: flex-start;   
+
+    margin-right: auto;
+    margin-bottom: 1vh;
+
+    opacity: 0;
+    animation: fadeInAnimation 0.5s forwards;
+}
+
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}

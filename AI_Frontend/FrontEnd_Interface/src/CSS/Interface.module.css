@@ -1,0 +1,66 @@
+
+.Textarea{
+    outline: None;
+    border:none;
+    padding: 5px;
+    height: 40px;
+    resize: none;
+    overflow: hidden;
+    width: 41vw;
+    background-color: transparent;
+    max-height: 6rem;
+    overflow-y: auto;
+}
+.container{
+    width: auto;
+    height: auto;
+    border:solid black 1px;
+    padding: 2vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    grid-row: bottom ;
+    position:fixed;
+    bottom: 0;
+    margin-bottom: 5vh;
+    z-index: 10000;
+    background-color: white;
+}
+.UpButton{
+    background-color: black;
+    outline: none;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    border: none;
+    color: white;
+    align-self: flex-end;
+    transition: 0.5s;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vw;
+}
+.Wrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow-y: auto;
+    padding-bottom: 20vh; 
+}
+.ChatArea{
+    overflow-y: auto;
+    width: 47vw;
+    margin-bottom: 5vh
+}
+.UpButton:disabled{
+    border: solid 1px black;
+    background-color: white;
+    cursor: default;
+}
