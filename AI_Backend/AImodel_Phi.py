@@ -8,7 +8,7 @@ CORS(app)
 OLLAMA_API_URL = "http://localhost:11434/api/chat"
 OLLAMA_MODEL = "phi"
 
-# This will store the chat history for now (in-memory for demo)
+
 chat_history = [{
     "role": "system",
     "content": "Your are a helpful assistant. Answer the question:"
