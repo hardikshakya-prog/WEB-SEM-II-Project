@@ -1,4 +1,4 @@
-this is a full-stack AI chatbot project using react and python created by -Hardik Shakya
+this is a full-stack AI chatbot project using react and python.
 for this program to funtion properly you will need to have ollamma installed and running in your system locally.
 the program also uses gemma:2b and phi LLM's for the chat system, So you will need to fun the following code in the terminal after installing ollama:
 -> ollama run phi
