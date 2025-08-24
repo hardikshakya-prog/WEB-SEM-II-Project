@@ -21,7 +21,7 @@ def translate():
         data = request.get_json()
         input_text = data.get("text", "")
 
-        # Add user's message to history
+        # Add user message to history
         chat_history.append({"role": "user", "content": input_text})
 
         # Send to Ollama
