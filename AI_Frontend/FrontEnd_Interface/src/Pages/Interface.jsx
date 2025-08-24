@@ -5,7 +5,7 @@ import styles from "../CSS/Interface.module.css";
 
 import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUserMessage, sendMessageThunk } from "../store/chatSlice";
+import { addUserMessage, sendMessage } from "../store/chatSlice"; // <-- updated import
 
 function Interface() {
   const [text, setText] = useState("");
@@ -20,22 +20,22 @@ function Interface() {
     const trimmed = text.trim();
     if (!trimmed) return;
 
-
+    // Add user message
     dispatch(addUserMessage(trimmed));
 
-  
+    // Reset textarea height and value
     setText("");
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
-      void textareaRef.current.offsetHeight;
+      void textareaRef.current.offsetHeight; // force reflow
       textareaRef.current.style.height = "2.5rem";
     }
 
-
-    dispatch(sendMessageThunk(trimmed));
+    // Send message to AI backend
+    dispatch(sendMessage(trimmed)); // <-- use new function name
   };
 
-
+  // Auto-scroll chat
   useEffect(() => {
     if (chatAreaRef.current) {
       chatAreaRef.current.scrollTop = chatAreaRef.current.scrollHeight;
@@ -44,16 +44,20 @@ function Interface() {
 
   return (
     <>
-<div
-  className={styles.ModelInfo}
-  style={{ fontFamily: "Arial, sans-serif", marginTop: "5vh", marginLeft:"2vw",position: "fixed"}}
->
-  Current Model: {selectedModel}
-</div>
+      <div
+        className={styles.ModelInfo}
+        style={{
+          fontFamily: "Arial, sans-serif",
+          marginTop: "5vh",
+          marginLeft: "2vw",
+          position: "fixed",
+        }}
+      >
+        Current Model: {selectedModel}
+      </div>
       <main>
         <div className={styles.Wrapper}>
           <div className={styles.ChatArea} ref={chatAreaRef}>
-
             {messages.map((msg) =>
               msg.sender === "user" ? (
                 <TextBox key={msg.id} text={msg.text} />
@@ -78,9 +82,7 @@ function Interface() {
             <button
               className={styles.UpButton}
               onClick={TriggerUserTextbox}
-              disabled={!text.trim()
-
-              }
+              disabled={!text.trim()}
             >
               &#8593;
             </button>

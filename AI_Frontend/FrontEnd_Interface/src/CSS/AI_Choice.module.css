@@ -14,8 +14,9 @@
     cursor: pointer;
     border-radius: 50px;
     border: 1px solid transparent;
-    background: #1a1a1a;
-    color: white;
+    background: white;
+    color: black;
+    border: 1px solid #1a1a1a;
     font-weight: 500;
     transition: 0.25s;
     margin: 0vw 2vw;
@@ -30,9 +31,9 @@
   display: flex;
 }
 .ButtonG:disabled {
-  background: grey;
+  background: #1a1a1a;
 
-  color: #ccc;
-  border: 1px solid grey;
+  color: white;
+  border: 1px solid rgb(0, 0, 0);
   scale: 1;
 }
