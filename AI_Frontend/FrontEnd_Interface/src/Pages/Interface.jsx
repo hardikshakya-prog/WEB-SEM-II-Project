@@ -27,7 +27,7 @@ function Interface() {
     setText("");
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
-      void textareaRef.current.offsetHeight; // force reflow
+      void textareaRef.current.offsetHeight; 
       textareaRef.current.style.height = "2.5rem";
     }
 
