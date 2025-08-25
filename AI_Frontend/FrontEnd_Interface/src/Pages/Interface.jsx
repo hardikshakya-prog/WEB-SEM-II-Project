@@ -5,7 +5,7 @@ import styles from "../CSS/Interface.module.css";
 
 import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUserMessage, sendMessage } from "../store/chatSlice"; // <-- updated import
+import { addUserMessage, sendMessage } from "../store/chatSlice";
 
 function Interface() {
   const [text, setText] = useState("");
@@ -32,7 +32,7 @@ function Interface() {
     }
 
     // Send message to AI backend
-    dispatch(sendMessage(trimmed)); // <-- use new function name
+    dispatch(sendMessage(trimmed));
   };
 
   // Auto-scroll chat
